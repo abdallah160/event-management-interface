@@ -13,6 +13,14 @@
     
 
 }
+#navButton{
+    display: none;
+    margin-right: 40px;
+}
+#rightSection{
+    display: flex;
+    justify-content: flex-start;
+}
 #sideBar{
     width: 250px;
     position: sticky;
@@ -34,10 +42,11 @@
 #eventsContainer{
     display: grid;
     grid-template-columns: 280px 280px 280px 280px;
-    margin-right: 6%;
-    margin-left: 6%;
-    gap: 60px;
+    grid-auto-rows: max-content;
+    gap: 40px;
     margin-top: 40px;
+    flex-grow: 1;
+    justify-content: center;
 
 }
 #formContainer{
@@ -54,15 +63,13 @@
 }
 
 .eventCard{
-    height: 300px;
-    width: 280px;
+    height: 200px;
+    width: 240px;
     background-color: rgb(213, 213, 213);
     border-radius: 4px;
     padding: 18px;
-}
-.eventCard img{
-    width: 100%;
-    border-radius: 4px;
+    text-decoration: none;
+    color: black;
 }
 
 a{
@@ -75,4 +82,46 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Inter", sans-serif;
+}
+
+@media (max-width:1600px){
+    #eventsContainer{
+        grid-template-columns: 280px 280px 280px;
+    }
+    
+}
+
+@media (max-width:1280px){
+    #eventsContainer{
+        grid-template-columns: 280px 280px;
+        
+    }
+    #sideBar{
+        display: none;
+        position: fixed;
+    }
+
+    #navButton{
+        display: block;
+    }
+
+
+}
+@media (max-width:775px){
+    #eventsContainer{
+        grid-template-columns: 240px;
+        
+    }
+    #navBar{
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+    .eventCard{
+        width: 200px;
+
+    }
+
+
+    
 }

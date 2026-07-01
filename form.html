@@ -13,8 +13,11 @@
 <body>
     
     <div id="navBar">
-        <a href="events.html">Events</a>
-        <a href="form.html">+New</a>
+        <div id="rightSection">
+            <button id="navButton">=</button>
+            <a href="events.html">Events</a>
+        </div>   
+        <a href="form.html" class="addingElement">+New</a>
     </div>
 
     <div id="appContainer">
@@ -23,14 +26,11 @@
 
         <div id="sideBar">
             <a href="events.html">List</a>
-            <a href="form.html">Form</a>
+            <a href="form.html" class="addingElement">Form</a>
         </div>
         
         <div id="formContainer">
             <form id="eventForm">
-                <label>Event Image:</label>
-                <button>+ upload image</button>
-                <br>
                 <label>Event Name:</label>
                 <input type="text" id="eventName">
                 <br>
