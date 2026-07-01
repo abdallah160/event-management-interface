@@ -7,22 +7,27 @@ if(form){
     let date = document.getElementById("eventDate").value;
 
     let newEvent = { name: name, date: date };
-    localStorage.setItem("newEvent", JSON.stringify(newEvent));
+    let newEventsList;
+    if(localStorage.getItem("newEventsList")){
+        newEventsList = JSON.parse(localStorage.getItem("newEventsList"));
+    }
+    else newEventsList = [];
+    newEventsList.push(newEvent);
+    localStorage.setItem("newEventsList", JSON.stringify(newEventsList));
 
     form.reset();
 })
-
 }
 
 if(container){
-    let newEvent = JSON.parse(localStorage.getItem("newEvent"));
+    let newEventsList = JSON.parse(localStorage.getItem("newEventsList"));
+    for(newEvent of newEventsList){
     container.innerHTML += `
-    <a href="form.html" id="eventCard">
-                <img src="https://placehold.co/600x400">
-                <h3>${newEvent.name}</h3>
-                <p>${newEvent.date}</p>
-            </a>
-    
-    
+        <a href="form.html" class="eventCard">
+        <img src="https://placehold.co/600x400">
+        <h3>${newEvent.name}</h3>
+        <p>${newEvent.date}</p>
+        </a>
     `
+    }
 }
