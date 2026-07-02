@@ -9,11 +9,10 @@ document.querySelectorAll(".addingElement").forEach(element => {
 document.getElementById("navButton").addEventListener('click', () => {
     const sideBar = document.getElementById("sideBar");
     
-    // Check the actual current applied style (including media queries)
     if (window.getComputedStyle(sideBar).display === 'none') {
-        sideBar.style.display = 'grid';   // Forces it to show up
+        sideBar.style.display = 'grid';   
     } else {
-        sideBar.style.display = 'none';   // Hides it again
+        sideBar.style.display = 'none';  
     }
 });
 let form = document.getElementById("eventForm");
